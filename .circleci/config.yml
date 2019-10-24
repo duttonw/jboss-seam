@@ -1,0 +1,55 @@
+version: 2
+shared: &shared
+  working_directory: ~/jboss-seam # directory where steps will run
+
+  environment:
+    MAVEN_OPTS: -Xmx2000m
+
+  steps:
+
+    - checkout
+
+    - restore_cache: # restore the saved cache after the first run or if `pom.xml` has changed
+        # Read about caching dependencies: https://circleci.
+        keys:
+          - jboss-seam-{{ checksum "pom.xml" }}
+          - jboss-seam-
+
+    - run: mvn dependency:go-offline # gets the project dependencies
+
+    - run:
+        name: Java version
+        command: java -version
+    - run:
+        name: mvn version
+        command: mvn -v
+    - run:
+        name: mvn compile test
+        command: mvn test-compile # make sure we compile
+    - run:
+        name: mvn verify
+        command: mvn verify # run the actual tests
+
+    - save_cache: # saves the project dependencies
+        paths:
+          - ~/.m2
+        key: jboss-seam-{{ checksum "pom.xml" }}
+
+
+jobs:
+  jdk8:
+    docker: #https://github.com/CircleCI-Public/circleci-dockerfiles
+      - image: circleci/openjdk:8-jdk-stretch # ...with this image as the primary container; this is where all `steps` will run
+    <<: *shared
+  jdk11:
+    docker: #https://github.com/CircleCI-Public/circleci-dockerfiles
+      - image: circleci/openjdk:11-jdk-stretch # ...with this image as the primary container; this is where all `steps` will run
+    <<: *shared
+
+
+workflows:
+  versions: 2
+  work:
+    jobs:
+      - jdk8
+      - jdk11
