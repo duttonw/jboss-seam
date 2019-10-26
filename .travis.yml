@@ -14,11 +14,14 @@ jdk:
 
 jobs:
   include:
+
     # compile check is fast
-    - stage: install
-      script: mvn test-compile -DskipTests=true -Dgpg.skip=true -B -q
+    - stage: "fast compile check"
+      install: mvn compile -DskipTests=true -Dgpg.skip=true -B -V
+      script: mvn test-compile -DskipTests=true -Dgpg.skip=true -B -V
     # verify
-    - stage: test
-      script: mvn verify -B
+    - stage: "slow verify site"
+      install: mvn test-compile -DskipTests=true -Dgpg.skip=true -B -V
+      script: mvn verify site -B -V
 
 
