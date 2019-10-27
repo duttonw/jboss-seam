@@ -192,6 +192,7 @@
                 <dependency>
                     <groupId>org.wildfly</groupId>
                     <artifactId>wildfly-arquillian-container-managed</artifactId>
+                    <version>1.1.0.Final</version>
                     <scope>test</scope>
                 </dependency>
             </dependencies>
@@ -223,6 +224,7 @@
                 <dependency>
                     <groupId>org.wildfly</groupId>
                     <artifactId>wildfly-arquillian-container-managed</artifactId>
+                    <version>1.1.0.Final</version>
                     <scope>test</scope>
                 </dependency>
             </dependencies>
