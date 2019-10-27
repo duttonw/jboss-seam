@@ -31,7 +31,7 @@ jobs:
             - jboss-seam-
 
       # run tests!
-      - run: mvn compile-test
+      - run: mvn test-compile
       # run tests!
       - run: mvn verify
 
