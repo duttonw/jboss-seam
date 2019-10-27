@@ -30,9 +30,6 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - jboss-seam-
 
-      - run: mvn dependency:go-offline
-
-
       # run tests!
       - run: mvn compile-test
       # run tests!
