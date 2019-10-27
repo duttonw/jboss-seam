@@ -51,8 +51,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     
         <!-- maven-compiler-plugin -->
-        <maven.compiler.target>1.7</maven.compiler.target>
-        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
     
         <!--
             Options to override the compiler arguments directly on the compiler arument line to separate between what
@@ -73,7 +73,7 @@
                 </property>
             </activation>
             <modules>
-                <module>blog</module>
+<!--                <module>blog</module>--><!--org.apache.solr.analysis does not exist-->
                 <module>booking</module>
                 <module>contactlist</module>
                 <module>drools</module>
