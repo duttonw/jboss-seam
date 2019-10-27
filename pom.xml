@@ -37,6 +37,7 @@
 
 	<properties>
 		<version.dependency.plugin>3.0.1</version.dependency.plugin>
+        <version.site.plugin>3.8.2</version.site.plugin>
 		<!-- General properties -->
         <project.short.version>2.3</project.short.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -565,6 +566,16 @@
                         </execution>
                     </executions>
                 </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>${version.site.plugin}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-project-info-reports-plugin</artifactId>
+                    <version>3.0.0</version>
+                </plugin>
 			</plugins>
 		</pluginManagement>
 
@@ -621,8 +632,24 @@
                    <warName>${project.build.finalName}</warName>
                </configuration>
            </plugin>
+
         </plugins>
     </build>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+<!--                <version>3.8.2</version>-->
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+<!--                <version>3.0.0</version>-->
+            </plugin>
+        </plugins>
+    </reporting>
 
    <modules>
       <module>build-tools</module>
