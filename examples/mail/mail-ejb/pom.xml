@@ -78,10 +78,17 @@
 		
 		<dependency>
             <groupId>javax.mail</groupId>
-            <artifactId>mail</artifactId>
+            <artifactId>javax.mail-api</artifactId>
             <scope>test</scope>
         </dependency>
-        
+		<dependency>
+			<groupId>com.sun.mail</groupId>
+			<artifactId>javax.mail</artifactId>
+			<version>1.5.1</version>
+			<scope>test</scope>
+		</dependency>
+
+
 	</dependencies>
 	
 	<profiles>
