@@ -59,13 +59,13 @@
             <artifactId>jboss-el</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.hibernate.javax.persistence</groupId>
-            <artifactId>hibernate-jpa-2.0-api</artifactId>
+            <groupId>javax.persistence</groupId>
+            <artifactId>javax.persistence-api</artifactId>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.jboss.spec.javax.faces</groupId>
-            <artifactId>jboss-jsf-api_2.1_spec</artifactId>
+            <artifactId>jboss-jsf-api_2.3_spec</artifactId>
             <scope>provided</scope>
         </dependency>
         <dependency>

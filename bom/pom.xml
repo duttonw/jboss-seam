@@ -41,19 +41,19 @@
 		<version.spring>3.1.4.RELEASE</version.spring>
         <version.richfaces>4.6.8.ayg</version.richfaces>
         <version.richfaces.cdk>4.5.0.Final</version.richfaces.cdk>
-		<version.org.jboss.spec.javax.faces>2.2.13</version.org.jboss.spec.javax.faces>
+		<version.org.jboss.spec.javax.faces>3.0.0.Final</version.org.jboss.spec.javax.faces>
 
         <!-- Version of Hibernate projects -->
         <version.org.hibernate>5.0.14.Final-redhat-1</version.org.hibernate>
         <version.org.hibernate.validator>5.2.5.Final</version.org.hibernate.validator>
         <version.org.hibernate.search>5.5.7.Final</version.org.hibernate.search>
-        <version.org.hibernate.javax.persistence>1.0.1.Final</version.org.hibernate.javax.persistence>
+        <version.javax.persistence.javax.persistence-api>2.2</version.javax.persistence.javax.persistence-api>
         <version.org.hibernate-jpamodelgen>1.2.0.Final</version.org.hibernate-jpamodelgen>
         
         <version.jboss-el>1.1.0</version.jboss-el>
         
         <!-- ??? -->
-        <version.wildfly>10.1.0.Final</version.wildfly>
+        <version.wildfly>18.0.0.Final</version.wildfly>
 
         <version.infinispan>8.2.4.Final</version.infinispan>
 
@@ -91,14 +91,14 @@
 			</dependency>
 		    <dependency>
                 <groupId>org.jboss.spec</groupId>
-                <artifactId>jboss-javaee-7.0</artifactId>
-                <version>1.0.3.Final</version>
+                <artifactId>jboss-javaee-web-8.0</artifactId>
+                <version>1.0.4.Final</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
 			<dependency>
                 <groupId>org.jboss.spec.javax.faces</groupId>
-                <artifactId>jboss-jsf-api_2.2_spec</artifactId>
+                <artifactId>jboss-jsf-api_2.3_spec</artifactId>
                 <version>${version.org.jboss.spec.javax.faces}</version>
                 <scope>provided</scope>
             </dependency>

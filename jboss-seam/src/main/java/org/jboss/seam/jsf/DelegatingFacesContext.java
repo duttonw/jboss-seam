@@ -8,10 +8,7 @@ import javax.faces.application.Application;
 import javax.faces.application.FacesMessage;
 import javax.faces.application.FacesMessage.Severity;
 import javax.faces.component.UIViewRoot;
-import javax.faces.context.ExternalContext;
-import javax.faces.context.FacesContext;
-import javax.faces.context.ResponseStream;
-import javax.faces.context.ResponseWriter;
+import javax.faces.context.*;
 import javax.faces.render.RenderKit;
 
 /**
@@ -23,120 +20,118 @@ import javax.faces.render.RenderKit;
  * @author Pete Muir
  *
  */
-public class DelegatingFacesContext extends FacesContext {
-
-	private FacesContext delegate;
+public class DelegatingFacesContext extends FacesContextWrapper {
 
 	public DelegatingFacesContext(FacesContext delegate) {
-		this.delegate = delegate;
+		super(delegate);
 	}
 
 	@Override
 	public void addMessage(String clientId, FacesMessage message) {
-		delegate.addMessage(clientId, message);
+		getWrapped().addMessage(clientId, message);
 	}
 
 	@Override
 	public Application getApplication() {
-		return delegate.getApplication();
+		return getWrapped().getApplication();
 	}
 
 	public Map<Object, Object> getAttributes() {
-		return delegate.getAttributes();
+		return getWrapped().getAttributes();
 	}
 
 	@Override
 	public Iterator getClientIdsWithMessages() {
-		return delegate.getClientIdsWithMessages();
+		return  getWrapped().getClientIdsWithMessages();
 	}
 
 	@Override
 	public ExternalContext getExternalContext() {
-		return delegate.getExternalContext();
+		return  getWrapped().getExternalContext();
 	}
 
 	@Override
 	public Severity getMaximumSeverity() {
-		return delegate.getMaximumSeverity();
+		return  getWrapped().getMaximumSeverity();
 	}
 
 	@Override
 	public Iterator getMessages() {
-		return delegate.getMessages();
+		return  getWrapped().getMessages();
 	}
 
 	@Override
 	public Iterator getMessages(String clientId) {
-		return delegate.getMessages(clientId);
+		return  getWrapped().getMessages(clientId);
 	}
 
 	@Override
 	public RenderKit getRenderKit() {
-		return delegate.getRenderKit();
+		return  getWrapped().getRenderKit();
 	}
 
 	@Override
 	public boolean getRenderResponse() {
-		return delegate.getRenderResponse();
+		return  getWrapped().getRenderResponse();
 	}
 
 	@Override
 	public boolean getResponseComplete() {
-		return delegate.getResponseComplete();
+		return  getWrapped().getResponseComplete();
 	}
 
 	@Override
 	public ResponseStream getResponseStream() {
-		return delegate.getResponseStream();
+		return  getWrapped().getResponseStream();
 	}
 
 	@Override
 	public ResponseWriter getResponseWriter() {
-		return delegate.getResponseWriter();
+		return  getWrapped().getResponseWriter();
 	}
 
 	@Override
 	public UIViewRoot getViewRoot() {
-		return delegate.getViewRoot();
+		return  getWrapped().getViewRoot();
 	}
 
 	@Override
 	public void release() {
-		delegate.release();
+		 getWrapped().release();
 	}
 
 	@Override
 	public void renderResponse() {
-		delegate.renderResponse();
+		 getWrapped().renderResponse();
 	}
 
 	@Override
 	public void responseComplete() {
-		delegate.responseComplete();
+		 getWrapped().responseComplete();
 	}
 
 	@Override
 	public void setResponseStream(ResponseStream responseStream) {
-		delegate.setResponseStream(responseStream);
+		 getWrapped().setResponseStream(responseStream);
 	}
 
 	@Override
 	public void setResponseWriter(ResponseWriter responseWriter) {
-		delegate.setResponseWriter(responseWriter);
+		 getWrapped().setResponseWriter(responseWriter);
 	}
 
 	@Override
 	public void setViewRoot(UIViewRoot root) {
-		delegate.setViewRoot(root);
+		getWrapped().setViewRoot(root);
 	}
 
 	public FacesContext getDelegate() {
-		return delegate;
+		return getWrapped();
 	}
 
 	@Override
 	public ELContext getELContext() {
-		return delegate.getELContext();
+		return getWrapped().getELContext();
 	}
 
 	public static void setCurrentInstance(FacesContext context) {

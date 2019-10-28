@@ -1,10 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <!--https://github.com/wildfly/wildfly/blob/18.0.0.Final/pom.xml-->
     <parent>
         <groupId>org.jboss</groupId>
         <artifactId>jboss-parent</artifactId>
-        <version>10</version>
+        <version>35</version>
     </parent>
     
 	<groupId>org.jboss.seam</groupId>
@@ -32,7 +33,7 @@
 			<name>Seam Developer List</name>
 		</mailingList>
 	</mailingLists>
-	<description>Java EE 5 framework to get easy developing Java Enterprise applications</description>
+	<description>Java EE 8 framework to get easy developing Java Enterprise applications</description>
 	<url>http://seamframework.org/Seam2</url>
 
 	<properties>
@@ -48,10 +49,9 @@
 
 		<!-- Version string properties -->
         <version.seam>2.3.16-SNAPSHOT</version.seam>
-		<version.jbossas7>7.2.0.Final</version.jbossas7>
-		<version.wildfly>10.1.0.Final</version.wildfly>
-		<version.emma>2.0.5312</version.emma>
-		<version.jsf.impl>2.2.13</version.jsf.impl>
+<!--		<version.jbossas7>7.2.0.Final</version.jbossas7>-->
+		<version.wildfly>18.0.0.Final</version.wildfly>
+		<version.jsf.impl>2.3.9.SP03</version.jsf.impl>
 		<version.richfaces.cdk>4.5.0.Final</version.richfaces.cdk>
 		<version.richfaces>4.6.5.ayg</version.richfaces>
 		
@@ -640,7 +640,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-site-plugin</artifactId>
-=            </plugin>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-project-info-reports-plugin</artifactId>
@@ -648,25 +648,26 @@
         </plugins>
     </reporting>
 
-   <modules>
-      <module>build-tools</module>
-      <module>bom</module>
-      <module>jboss-seam</module>
-      <module>jboss-seam-ui</module>
-      <module>jboss-seam-debug</module>
-      <module>jboss-seam-gen</module>
-      <module>jboss-seam-excel</module>
-      <module>jboss-seam-flex</module>
-      <module>jboss-seam-mail</module>
-      <module>jboss-seam-pdf</module>
-      <module>jboss-seam-remoting</module>
-      <module>jboss-seam-resteasy</module>
-      <module>jboss-seam-rss</module>
-      <module>jboss-seam-wicket</module>
-      <module>jboss-seam-ioc</module>
-      <module>functional-tests</module>
-      <module>seam-integration-tests</module>
+    <modules>
+       <module>build-tools</module>
+       <module>bom</module>
+       <module>jboss-seam</module>
+       <module>jboss-seam-ui</module>
+       <module>jboss-seam-debug</module>
+       <module>jboss-seam-gen</module>
+       <module>jboss-seam-excel</module>
+       <module>jboss-seam-flex</module>
+       <module>jboss-seam-mail</module>
+       <module>jboss-seam-pdf</module>
+       <module>jboss-seam-remoting</module>
+       <module>jboss-seam-resteasy</module>
+       <module>jboss-seam-rss</module>
+       <module>jboss-seam-wicket</module>
+       <module>jboss-seam-ioc</module>
+       <module>functional-tests</module>
+       <module>seam-integration-tests</module>
    </modules>
+
 
     <profiles>
         <profile>
@@ -759,20 +760,20 @@
 	</profiles>
 
       <repositories>
-        <repository>
-          <id>repository-primefaces-org</id>
-          <name>Primefaces Repository</name>
-          <url>http://repository.primefaces.org/</url>
-          <layout>default</layout>
-          <releases>
-            <enabled>true</enabled>
-            <updatePolicy>never</updatePolicy>
-          </releases>
-          <snapshots>
-            <enabled>true</enabled>
-            <updatePolicy>never</updatePolicy>
-          </snapshots>
-        </repository>
+<!--        <repository>-->
+<!--          <id>repository-primefaces-org</id>-->
+<!--          <name>Primefaces Repository</name>-->
+<!--          <url>http://repository.primefaces.org/</url>-->
+<!--          <layout>default</layout>-->
+<!--          <releases>-->
+<!--            <enabled>true</enabled>-->
+<!--            <updatePolicy>never</updatePolicy>-->
+<!--          </releases>-->
+<!--          <snapshots>-->
+<!--            <enabled>true</enabled>-->
+<!--            <updatePolicy>never</updatePolicy>-->
+<!--          </snapshots>-->
+<!--        </repository>-->
         <repository>
           <id>jboss-public-repository-group</id>
           <name>JBoss Public Maven Repository Group</name>

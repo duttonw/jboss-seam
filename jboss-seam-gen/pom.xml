@@ -111,8 +111,8 @@
       
       
       <dependency>
-         <groupId>org.hibernate.javax.persistence</groupId>
-         <artifactId>hibernate-jpa-2.1-api</artifactId>       
+          <groupId>javax.persistence</groupId>
+            <artifactId>javax.persistence-api</artifactId>
          <scope>runtime</scope>
       </dependency>
       
@@ -161,26 +161,26 @@
 		<version>7.0</version>
 	</dependency>
 	
-	<dependency>
-		<groupId>org.primefaces.themes</groupId>
-		<artifactId>bootstrap</artifactId>
-		<version>1.0.10</version>
-	</dependency>
-	<dependency>
-		<groupId>org.primefaces.themes</groupId>
-		<artifactId>bluesky</artifactId>
-		<version>1.0.10</version>
-	</dependency>
-	<dependency>
-		<groupId>org.primefaces.themes</groupId>
-		<artifactId>south-street</artifactId>
-		<version>1.0.10</version>
-	</dependency>
-	<dependency>
-		<groupId>net.bootsfaces</groupId>
-		<artifactId>bootsfaces</artifactId>
-		<version>1.1.2</version>
-	</dependency>
+<!--	<dependency>-->
+<!--		<groupId>org.primefaces.themes</groupId>-->
+<!--		<artifactId>bootstrap</artifactId>-->
+<!--		<version>1.0.10</version>-->
+<!--	</dependency>-->
+<!--	<dependency>-->
+<!--		<groupId>org.primefaces.themes</groupId>-->
+<!--		<artifactId>bluesky</artifactId>-->
+<!--		<version>1.0.10</version>-->
+<!--	</dependency>-->
+<!--	<dependency>-->
+<!--		<groupId>org.primefaces.themes</groupId>-->
+<!--		<artifactId>south-street</artifactId>-->
+<!--		<version>1.0.10</version>-->
+<!--	</dependency>-->
+<!--	<dependency>-->
+<!--		<groupId>net.bootsfaces</groupId>-->
+<!--		<artifactId>bootsfaces</artifactId>-->
+<!--		<version>1.1.2</version>-->
+<!--	</dependency>-->
 
 
       

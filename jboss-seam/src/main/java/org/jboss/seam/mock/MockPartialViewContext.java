@@ -2,6 +2,7 @@ package org.jboss.seam.mock;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 
 import javax.faces.context.PartialResponseWriter;
 import javax.faces.context.PartialViewContext;
@@ -76,4 +77,8 @@ public class MockPartialViewContext extends PartialViewContext {
 		this.renderAll = arg0;
 	}
 
+	@Override
+	public List<String> getEvalScripts() {
+		return null;
+	}
 }

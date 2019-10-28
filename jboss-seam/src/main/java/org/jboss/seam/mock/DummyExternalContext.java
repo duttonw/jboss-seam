@@ -6,8 +6,7 @@
  */
 package org.jboss.seam.mock;
 
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.security.Principal;
@@ -24,6 +23,8 @@ import java.util.Set;
 
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
+import javax.faces.context.Flash;
+import javax.faces.lifecycle.ClientWindow;
 import javax.servlet.ServletContext;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -40,45 +41,17 @@ import org.jboss.seam.util.EnumerationIterator;
  * @author Marek Novotny
  * @version $Revision: 13963 $
  */
-public class MockExternalContext extends ExternalContext {
+public class DummyExternalContext extends ExternalContext {
 	private ServletContext context;
 
 	private HttpServletRequest request;
 
 	private HttpServletResponse response;
 
-	public MockExternalContext() {
-		this.context = new MockServletContext();
-		this.request = new MockHttpServletRequest(new MockHttpSession(context));
-		this.response = new MockHttpServletResponse();
-	}
-
-	public MockExternalContext(ServletContext context) {
-		this.context = context;
-		this.request = new MockHttpServletRequest(new MockHttpSession(context));
-		this.response = new MockHttpServletResponse();
-	}
-
-	public MockExternalContext(ServletContext context, HttpSession session) {
-		this.context = context;
-		this.request = new MockHttpServletRequest(session);
-		this.response = new MockHttpServletResponse();
-	}
-
-	public MockExternalContext(ServletContext context, HttpServletRequest request) {
-		this.context = context;
-		this.request = request;
-		this.response = new MockHttpServletResponse();
-	}
-
-	public MockExternalContext(ServletContext context, HttpServletRequest request, HttpServletResponse response) {
+	public DummyExternalContext(ServletContext context, HttpServletRequest request, HttpServletResponse response) {
 		this.context = context;
 		this.request = request;
 		this.response = response;
-	}
-
-	public MockExternalContext(HttpServletRequest request) {
-		this.request = request;
 	}
 
 	@Override
@@ -507,6 +480,186 @@ public class MockExternalContext extends ExternalContext {
 			url = (encodedUrl != null ? encodedUrl : url);
 		}
 		return url;
+	}
+
+	@Override
+	public void addResponseCookie(String name, String value, Map<String, Object> properties) {
+		super.addResponseCookie(name, value, properties);
+	}
+
+	@Override
+	public Flash getFlash() {
+		return super.getFlash();
+	}
+
+	@Override
+	public String getContextName() {
+		return super.getContextName();
+	}
+
+	@Override
+	public String getApplicationContextPath() {
+		return super.getApplicationContextPath();
+	}
+
+	@Override
+	public String getRequestScheme() {
+		return super.getRequestScheme();
+	}
+
+	@Override
+	public String getRequestServerName() {
+		return super.getRequestServerName();
+	}
+
+	@Override
+	public int getRequestServerPort() {
+		return super.getRequestServerPort();
+	}
+
+	@Override
+	public void setRequestCharacterEncoding(String encoding) throws UnsupportedEncodingException {
+		super.setRequestCharacterEncoding(encoding);
+	}
+
+	@Override
+	public String getRealPath(String path) {
+		return super.getRealPath(path);
+	}
+
+	@Override
+	public String getRequestContentType() {
+		return super.getRequestContentType();
+	}
+
+	@Override
+	public int getRequestContentLength() {
+		return super.getRequestContentLength();
+	}
+
+	@Override
+	public String getResponseCharacterEncoding() {
+		return super.getResponseCharacterEncoding();
+	}
+
+	@Override
+	public void setResponse(Object response) {
+		super.setResponse(response);
+	}
+
+	@Override
+	public OutputStream getResponseOutputStream() throws IOException {
+		return super.getResponseOutputStream();
+	}
+
+	@Override
+	public Writer getResponseOutputWriter() throws IOException {
+		return super.getResponseOutputWriter();
+	}
+
+	@Override
+	public void setResponseCharacterEncoding(String encoding) {
+		super.setResponseCharacterEncoding(encoding);
+	}
+
+	@Override
+	public void setResponseContentType(String contentType) {
+		super.setResponseContentType(contentType);
+	}
+
+	@Override
+	public String getSessionId(boolean create) {
+		return super.getSessionId(create);
+	}
+
+	@Override
+	public int getSessionMaxInactiveInterval() {
+		return super.getSessionMaxInactiveInterval();
+	}
+
+	@Override
+	public ClientWindow getClientWindow() {
+		return super.getClientWindow();
+	}
+
+	@Override
+	public void invalidateSession() {
+		super.invalidateSession();
+	}
+
+	@Override
+	public void setResponseHeader(String name, String value) {
+		super.setResponseHeader(name, value);
+	}
+
+	@Override
+	public void addResponseHeader(String name, String value) {
+		super.addResponseHeader(name, value);
+	}
+
+	@Override
+	public void setResponseBufferSize(int size) {
+		super.setResponseBufferSize(size);
+	}
+
+	@Override
+	public int getResponseBufferSize() {
+		return super.getResponseBufferSize();
+	}
+
+	@Override
+	public boolean isResponseCommitted() {
+		return super.isResponseCommitted();
+	}
+
+	@Override
+	public void responseReset() {
+		super.responseReset();
+	}
+
+	@Override
+	public void responseSendError(int statusCode, String message) throws IOException {
+		super.responseSendError(statusCode, message);
+	}
+
+	@Override
+	public void setResponseStatus(int statusCode) {
+		super.setResponseStatus(statusCode);
+	}
+
+	@Override
+	public void setSessionMaxInactiveInterval(int interval) {
+		super.setSessionMaxInactiveInterval(interval);
+	}
+
+	@Override
+	public void setClientWindow(ClientWindow window) {
+		super.setClientWindow(window);
+	}
+
+	@Override
+	public void responseFlushBuffer() throws IOException {
+		super.responseFlushBuffer();
+	}
+
+	@Override
+	public void setResponseContentLength(int length) {
+		super.setResponseContentLength(length);
+	}
+
+	@Override
+	public String encodeBookmarkableURL(String baseUrl, Map<String, List<String>> parameters) {
+		return super.encodeBookmarkableURL(baseUrl, parameters);
+	}
+
+	@Override
+	public String encodePartialActionURL(String url) {
+		return super.encodePartialActionURL(url);
+	}
+
+	@Override
+	public boolean isSecure() {
+		return super.isSecure();
 	}
 
 	@Override
