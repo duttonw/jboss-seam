@@ -33,6 +33,7 @@ public class SeamApplication extends ApplicationWrapper {
 	protected Application application;
 
 	public SeamApplication(Application application) {
+		super(application);
 		this.application = application;
 	}
 
@@ -126,7 +127,7 @@ public class SeamApplication extends ApplicationWrapper {
 	}
 
 	@Override
-	public Validator createValidator(String validatorId) throws FacesException {
+	public Validator createValidator(String validatorId) {
 		if ( Contexts.isApplicationContextActive() ) {
 			String name = Init.instance().getValidators().get(validatorId);
 			if (name!=null) {

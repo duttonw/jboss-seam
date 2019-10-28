@@ -180,7 +180,7 @@ public class AbstractSeamTest {
 		private HttpServletResponse response;
 		private MockFacesContext facesContext;
 		private MockExternalContext externalContext;
-		private Map<String, Object> pageParameters = new HashMap<String, Object>();
+		private Map<String, Object> pageParameters = new HashMap<>();
 
 		protected void setPageParameter(String name, Object value) {
 			pageParameters.put(name, value);
@@ -506,7 +506,7 @@ public class AbstractSeamTest {
 		private void setStandardJspVariables() {
 			// TODO: looks like we should also set request, session, application,
 			// page...
-			Map<String, String> params = new HashMap<String, String>();
+			Map<String, String> params = new HashMap<>();
 			for (Map.Entry<String, String[]> e : ((Map<String, String[]>) request.getParameterMap()).entrySet()) {
 				if (e.getValue().length == 1) {
 					params.put(e.getKey(), e.getValue()[0]);

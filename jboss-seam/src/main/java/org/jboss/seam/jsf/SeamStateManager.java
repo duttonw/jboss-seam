@@ -3,6 +3,7 @@ package org.jboss.seam.jsf;
 import java.io.IOException;
 
 import javax.faces.application.StateManager;
+import javax.faces.application.StateManagerWrapper;
 import javax.faces.component.UIViewRoot;
 import javax.faces.context.FacesContext;
 
@@ -18,32 +19,13 @@ import org.jboss.seam.navigation.Pages;
  * @author Gavin King
  */
 @SuppressWarnings("deprecation")
-public class SeamStateManager extends StateManager {
-	private final StateManager stateManager;
+public class SeamStateManager extends StateManagerWrapper {
 
 	public SeamStateManager(StateManager sm) {
-		this.stateManager = sm;
+		super(sm);
 	}
 
-	@Override
-	protected Object getComponentStateToSave(FacesContext ctx) {
-		throw new UnsupportedOperationException();
-	}
 
-	@Override
-	protected Object getTreeStructureToSave(FacesContext ctx) {
-		throw new UnsupportedOperationException();
-	}
-
-	@Override
-	protected void restoreComponentState(FacesContext ctx, UIViewRoot viewRoot, String str) {
-		throw new UnsupportedOperationException();
-	}
-
-	@Override
-	protected UIViewRoot restoreTreeStructure(FacesContext ctx, String str1, String str2) {
-		throw new UnsupportedOperationException();
-	}
 
 	@Override
 	public SerializedView saveSerializedView(FacesContext facesContext) {
@@ -53,17 +35,7 @@ public class SeamStateManager extends StateManager {
 			Pages.instance().updateStringValuesInPageContextUsingModel(facesContext);
 		}
 
-		return stateManager.saveSerializedView(facesContext);
-	}
-
-	@Override
-	public void writeState(FacesContext ctx, SerializedView sv) throws IOException {
-		stateManager.writeState(ctx, sv);
-	}
-
-	@Override
-	public UIViewRoot restoreView(FacesContext ctx, String str1, String str2) {
-		return stateManager.restoreView(ctx, str1, str2);
+		return getWrapped().saveSerializedView(facesContext);
 	}
 
 	@Override
@@ -74,17 +46,6 @@ public class SeamStateManager extends StateManager {
 			Pages.instance().updateStringValuesInPageContextUsingModel(facesContext);
 		}
 
-		return stateManager.saveView(facesContext);
+		return getWrapped().saveView(facesContext);
 	}
-
-	@Override
-	public void writeState(FacesContext ctx, Object sv) throws IOException {
-		stateManager.writeState(ctx, sv);
-	}
-
-	@Override
-	public boolean isSavingStateInClient(FacesContext ctx) {
-		return stateManager.isSavingStateInClient(ctx);
-	}
-
 }

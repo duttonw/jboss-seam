@@ -12,21 +12,19 @@ import javax.faces.application.ApplicationFactory;
  *
  */
 public class SeamApplicationFactory extends ApplicationFactory {
-
-	private final ApplicationFactory delegate;
-
+	
 	public SeamApplicationFactory(ApplicationFactory af) {
-		delegate = af;
+		super(af);
 	}
 
 	@Override
 	public Application getApplication() {
-		return new SeamApplication(delegate.getApplication());
+		return new SeamApplication(getWrapped().getApplication());
 	}
 
 	@Override
 	public void setApplication(Application application) {
-		delegate.setApplication(application);
+		getWrapped().setApplication(application);
 	}
 
 }
