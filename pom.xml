@@ -37,6 +37,7 @@
 
 	<properties>
 		<version.dependency.plugin>3.0.1</version.dependency.plugin>
+        <version.site.plugin>3.8.2</version.site.plugin>
 		<!-- General properties -->
         <project.short.version>2.3</project.short.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -78,8 +79,8 @@
 		<jboss.releases.repo.url>https://repository.jboss.org/nexus/service/local/staging/deploy/maven2/</jboss.releases.repo.url>
 		<jboss.snapshots.repo.url>https://repository.jboss.org/nexus/content/repositories/snapshots/</jboss.snapshots.repo.url>
 		<maven.build.timestamp.format>yyyyMMdd-HHmm</maven.build.timestamp.format>
-        <maven.compiler.target>1.7</maven.compiler.target>
-        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
 
         <jacoco.skip>false</jacoco.skip>
         <dependency.skip>false</dependency.skip>
@@ -226,8 +227,8 @@
 
             <dependency>
                 <groupId>javax.mail</groupId>
-                <artifactId>mail</artifactId>
-                <version>1.4</version>
+                <artifactId>javax.mail-api</artifactId>
+                <version>1.5.1</version>
             </dependency>
 
             <dependency>
@@ -258,7 +259,7 @@
             <dependency>
                 <groupId>dom4j</groupId>
                 <artifactId>dom4j</artifactId>
-                <version>1.6.1-brew</version>
+                <version>1.6.1</version>
                 <exclusions>
                     <exclusion>
                         <groupId>xml-apis</groupId>
@@ -565,6 +566,16 @@
                         </execution>
                     </executions>
                 </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>${version.site.plugin}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-project-info-reports-plugin</artifactId>
+                    <version>3.0.0</version>
+                </plugin>
 			</plugins>
 		</pluginManagement>
 
@@ -623,6 +634,19 @@
            </plugin>
         </plugins>
     </build>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+=            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </reporting>
 
    <modules>
       <module>build-tools</module>
