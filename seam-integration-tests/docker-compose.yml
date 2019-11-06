@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  wildfly10:
+    build:
+      context: ./.docker
+      dockerfile: Dockerfile-wildfly10-aquil
+    networks:
+      - default
+    ports:
+      - 127.0.0.1:8080:8080
+      - 127.0.0.1:9990:9990
+    command: []
+    volumes:
+      - ../:/data
+      - ~/.m2:/opt/jboss/.m2 #jboss home

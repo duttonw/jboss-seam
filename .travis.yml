@@ -24,35 +24,42 @@ jobs:
       script:  "mvn clean test-compile -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun"
       name: "Jboss Core: test-compile"
       jdk: openjdk8
-    - script:  "mvn clean test-compile -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun"
-      name: "Jboss Core: test-compile - jdk11"
-      env: CANFAIL=true
-      jdk: openjdk11
+#    - script:  "mvn clean test-compile -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun"
+#      name: "Jboss Core: test-compile - jdk11"
+#      env: CANFAIL=true
+#      jdk: openjdk11
     - script: "mvn test-compile -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun,examples"
       name: "Jboss Core + examples: test-compile"
       env: CANFAIL=true
       jdk: openjdk8
-    - script: "mvn test-compile -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun,examples"
-      name: "Jboss Core + examples: test-compile -jdk11"
-      env: CANFAIL=true
-      jdk: openjdk11
+#    - script: "mvn test-compile -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun,examples"
+#      name: "Jboss Core + examples: test-compile -jdk11"
+#      env: CANFAIL=true
+#      jdk: openjdk11
 
     - stage: long
       script: "mvn verify -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun"
       name: "Jboss Core: verify"
       jdk: openjdk8
-    - script: "mvn verify -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun"
-      name: "Jboss Core: verify -jdk11"
-      env: CANFAIL=true
-      jdk: openjdk11
+    - script: "mvn package -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun && cd seam-integration-tests && ./integrationTest.sh"
+      name: "Jboss Integration tests"
+      jdk: openjdk8
+#    - script: "mvn verify -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun"
+#      name: "Jboss Core: verify -jdk11"
+#      env: CANFAIL=true
+#      jdk: openjdk11
     - script: "mvn package -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun,examples"
       name: "Jboss Core + examples: verify"
       env: CANFAIL=true
       jdk: openjdk8
-    - script: "mvn package -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun,examples"
-      name: "Jboss Core + examples: verify -jdk11"
+    - script: "mvn package -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun,integration-test"
+      name: "Jboss Core + integration-test: verify"
       env: CANFAIL=true
-      jdk: openjdk11
+      jdk: openjdk8
+#    - script: "mvn package -Dcheckstyle.skip=true -Dgpg.skip=true -B -V -Pquickrun,examples"
+#      name: "Jboss Core + examples: verify -jdk11"
+#      env: CANFAIL=true
+#      jdk: openjdk11
   allow_failures:
     - jdk: openjdk8
       env: CANFAIL=true
