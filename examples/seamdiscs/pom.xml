@@ -15,7 +15,7 @@
 
         <!-- To use jacoco, set jacoco.agent system property to something like
                      -javaagent:/path/to/jacocoagent.jar=append=true,destfile=/path/to/output/jacoco.exec -->
-        <jacoco.agent />
+        <jacoco.agent/>
 
         <!-- To use custom Maven settings with ShrinkWrap Resolver, uncomment 
                           and customize the following property.  -->
@@ -71,7 +71,7 @@
             <dependency>
                 <groupId>org.apache.myfaces.trinidad</groupId>
                 <artifactId>trinidad-impl</artifactId>
-                <version>2.0.1</version>
+                <version>2.0.2</version>
             </dependency>            
 
             <!-- BOMs -->
