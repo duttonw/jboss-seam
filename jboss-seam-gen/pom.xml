@@ -70,7 +70,7 @@
                 <phase>clean</phase>
                 <configuration>
                   <target>
-                    <delete file="${project.basedir}/../build/build.properties" />
+                    <delete file="${project.basedir}/../build/build.properties"/>
                   </target>
                 </configuration>
                 <goals>
@@ -158,7 +158,7 @@
 	<dependency>
 		<groupId>org.primefaces.extensions</groupId>
 		<artifactId>resources-ckeditor</artifactId>
-		<version>7.0</version>
+		<version>10.0.0</version>
 	</dependency>
 	
 	<dependency>
