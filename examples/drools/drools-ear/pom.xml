@@ -37,7 +37,7 @@
       <dependency>
       	<groupId>com.github.albfernandez</groupId>
       	<artifactId>jbpm-jpdl</artifactId>
-      	<version>3.2.15.ayg</version>
+      	<version>3.2.16.ayg</version>
       	<exclusions>
       		<exclusion>
       			<artifactId>jackrabbit-core</artifactId>
@@ -96,7 +96,7 @@
             <version>${version.jboss.maven.plugin}</version>
             <executions>
                <execution>
-                  <phase />
+                  <phase/>
                   <goals>
                      <goal>deploy</goal>
                   </goals>
