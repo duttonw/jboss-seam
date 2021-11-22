@@ -16,7 +16,7 @@
         <version.surefire.plugin>2.10</version.surefire.plugin>
         <version.build-helper.plugin>1.7</version.build-helper.plugin> 
         <version.war.plugin>2.1.1</version.war.plugin>
-        <version.metawidget>2.4</version.metawidget>
+        <version.metawidget>3.9</version.metawidget>
     </properties>
     
     <modules>
