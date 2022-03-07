@@ -33,7 +33,7 @@
 	
 		<!-- Version string properties for integrations-->
         <version.seam>2.3.16-SNAPSHOT</version.seam>
-		<version.wicket>1.4.14</version.wicket>
+		<version.wicket>1.4.23</version.wicket>
 		<version.drools>5.3.3.Final</version.drools><!-- Needed for Seam2 compatibility -->
 		<version.mvel2>2.1.9.Final</version.mvel2> <!-- needed for drools 5.3.3 (do not use 2.2) -->
 		<version.janino>2.5.15</version.janino> <!--  Needed for drools 5.3.3 which is needed for seam2 -->
@@ -44,8 +44,8 @@
 		<version.org.jboss.spec.javax.faces>2.2.13</version.org.jboss.spec.javax.faces>
 
         <!-- Version of Hibernate projects -->
-        <version.org.hibernate>5.0.12.Final</version.org.hibernate><!--5.0.14.Final-redhat-1 is not in normal mvn repos-->
-        <version.org.hibernate.validator>5.2.5.Final</version.org.hibernate.validator>
+        <version.org.hibernate>5.4.24.Final</version.org.hibernate><!--5.0.14.Final-redhat-1 is not in normal mvn repos-->
+        <version.org.hibernate.validator>6.0.23.Final</version.org.hibernate.validator>
         <version.org.hibernate.search>5.5.7.Final</version.org.hibernate.search>
         <version.org.hibernate.javax.persistence>1.0.1.Final</version.org.hibernate.javax.persistence>
         <version.org.hibernate-jpamodelgen>1.2.0.Final</version.org.hibernate-jpamodelgen>
