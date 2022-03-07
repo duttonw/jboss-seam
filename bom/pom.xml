@@ -34,7 +34,7 @@
 		<!-- Version string properties for integrations-->
         <version.seam>2.3.16-SNAPSHOT</version.seam>
 		<version.wicket>1.4.14</version.wicket>
-		<version.drools>5.3.3.Final</version.drools><!-- Needed for Seam2 compatibility -->
+		<version.drools>6.0.0.Final</version.drools><!-- Needed for Seam2 compatibility -->
 		<version.mvel2>2.1.9.Final</version.mvel2> <!-- needed for drools 5.3.3 (do not use 2.2) -->
 		<version.janino>2.5.15</version.janino> <!--  Needed for drools 5.3.3 which is needed for seam2 -->
 		<version.resteasy>3.0.19.Final</version.resteasy>
@@ -44,9 +44,9 @@
 		<version.org.jboss.spec.javax.faces>2.2.13</version.org.jboss.spec.javax.faces>
 
         <!-- Version of Hibernate projects -->
-        <version.org.hibernate>5.0.12.Final</version.org.hibernate><!--5.0.14.Final-redhat-1 is not in normal mvn repos-->
-        <version.org.hibernate.validator>5.2.5.Final</version.org.hibernate.validator>
-        <version.org.hibernate.search>5.5.7.Final</version.org.hibernate.search>
+        <version.org.hibernate>5.4.24.Final</version.org.hibernate><!--5.0.14.Final-redhat-1 is not in normal mvn repos-->
+        <version.org.hibernate.validator>6.0.23.Final</version.org.hibernate.validator>
+        <version.org.hibernate.search>5.11.7.Final</version.org.hibernate.search>
         <version.org.hibernate.javax.persistence>1.0.1.Final</version.org.hibernate.javax.persistence>
         <version.org.hibernate-jpamodelgen>1.2.0.Final</version.org.hibernate-jpamodelgen>
         
@@ -55,12 +55,12 @@
         <!-- ??? -->
         <version.wildfly>10.1.0.Final</version.wildfly>
 
-        <version.infinispan>8.2.4.Final</version.infinispan>
+        <version.infinispan>9.3.0.Final</version.infinispan>
 
         <!-- Test frameworks -->
 
-        <version.junit>4.12</version.junit>
-        <version.org.testng>6.14.3</version.org.testng>
+        <version.junit>4.13.1</version.junit>
+        <version.org.testng>7.0.0</version.org.testng>
         
         <!-- Versions of Arquillian and Shrinkwrap -->
         <version.org.jboss.arquillian>1.1.11.Final</version.org.jboss.arquillian>
@@ -687,7 +687,7 @@
 			<dependency>
 				<groupId>org.codehaus.groovy</groupId>
 				<artifactId>groovy-all</artifactId>
-				<version>1.5.4</version>
+				<version>2.4.7</version>
 				<exclusions>
 					<!-- groovy-all imports a lot of stuff, would be better to just use 
 						specific bits -->
@@ -868,7 +868,7 @@
 			<dependency>
 				<groupId>org.quartz-scheduler</groupId>
 				<artifactId>quartz</artifactId>
-				<version>1.7.3</version>
+				<version>2.3.2</version>
 			</dependency>
 
 
