@@ -104,21 +104,21 @@
                 <configuration>
                     <target>
                         <jar destfile="${project.build.directory}/${project.artifactId}-wls-compatible.jar">
-                            <zipfileset includes="**/*" excludes="org/jboss/seam/async/TimerServiceDispatcher*" src="${project.build.directory}/${project.artifactId}.jar" />
+                            <zipfileset includes="**/*" excludes="org/jboss/seam/async/TimerServiceDispatcher*" src="${project.build.directory}/${project.artifactId}.jar"/>
                             <manifest>
-                                <attribute name="Built-By" value="${user.name}" />
-                                <attribute name="Implementation-Vendor" value="${project.organization.name}" />
-                                <attribute name="Implementation-Title" value="JBoss Seam JSF2 Weblogic compatible" />
-                                <attribute name="Implementation-Version" value="${project.version}" />
+                                <attribute name="Built-By" value="${user.name}"/>
+                                <attribute name="Implementation-Vendor" value="${project.organization.name}"/>
+                                <attribute name="Implementation-Title" value="JBoss Seam JSF2 Weblogic compatible"/>
+                                <attribute name="Implementation-Version" value="${project.version}"/>
                             </manifest>
                         </jar>
                         <jar destfile="${project.build.directory}/${project.artifactId}-wls-compatible-sources.jar">
-                            <zipfileset includes="**/*" excludes="org/jboss/seam/async/TimerServiceDispatcher.java" src="${project.build.directory}/${project.artifactId}-sources.jar" />
+                            <zipfileset includes="**/*" excludes="org/jboss/seam/async/TimerServiceDispatcher.java" src="${project.build.directory}/${project.artifactId}-sources.jar"/>
                             <manifest>
-                                <attribute name="Built-By" value="${user.name}" />
-                                <attribute name="Implementation-Vendor" value="${project.organization.name}" />
-                                <attribute name="Implementation-Title" value="JBoss Seam JSF2 Weblogic compatible" />
-                                <attribute name="Implementation-Version" value="${project.version}" />
+                                <attribute name="Built-By" value="${user.name}"/>
+                                <attribute name="Implementation-Vendor" value="${project.organization.name}"/>
+                                <attribute name="Implementation-Title" value="JBoss Seam JSF2 Weblogic compatible"/>
+                                <attribute name="Implementation-Version" value="${project.version}"/>
                             </manifest>
                         </jar>
                     </target>
@@ -419,7 +419,7 @@
         <dependency>
             <groupId>com.github.albfernandez</groupId>
             <artifactId>jbpm-jpdl</artifactId>
-            <version>3.2.15.ayg</version>
+            <version>3.2.16.ayg</version>
             <optional>true</optional>
             <exclusions>
 	            <exclusion>
