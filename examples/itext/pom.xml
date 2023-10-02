@@ -21,7 +21,7 @@
 
 		<!-- To use jacoco, set jacoco.agent system property to something like 
 			-javaagent:/path/to/jacocoagent.jar=append=true,destfile=/path/to/output/jacoco.exec -->
-		<jacoco.agent />
+		<jacoco.agent/>
 
 		<!-- To use custom Maven settings and profiles, uncomment and customize 
 			the following properties. This is necessary for the ShrinkWrap resolver to 
@@ -75,7 +75,7 @@
 			<dependency>
 				<groupId>com.lowagie</groupId>
 				<artifactId>itext</artifactId>
-				<version>2.1.7</version>
+				<version>4.2.0</version>
 			</dependency>
 
 			<dependency>
