@@ -70,7 +70,7 @@
                 <phase>clean</phase>
                 <configuration>
                   <target>
-                    <delete file="${project.basedir}/../build/build.properties" />
+                    <delete file="${project.basedir}/../build/build.properties"/>
                   </target>
                 </configuration>
                 <goals>
@@ -119,7 +119,7 @@
       <dependency>
          <groupId>commons-logging</groupId>
          <artifactId>commons-logging</artifactId>
-         <version>1.1</version>
+         <version>1.1.1</version>
          <scope>runtime</scope>
       </dependency>
 
