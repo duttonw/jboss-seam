@@ -55,7 +55,7 @@
         <!-- ??? -->
         <version.wildfly>10.1.0.Final</version.wildfly>
 
-        <version.infinispan>8.2.4.Final</version.infinispan>
+        <version.infinispan>14.0.34.Final</version.infinispan>
 
         <!-- Test frameworks -->
 
